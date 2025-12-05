@@ -1,60 +1,51 @@
-import React from 'react';
-import "./Table.css";
+import React from 'react'
+import "../components/Table.css"
 
 const Table = () => {
-
-    const students=[
-        {name:"Sandeep",age:23},
-        {name:"Manish",age:24},
-        {name:"Farook",age:23},
-        {name:"Chandan",age:25},
-        {name:"ManyaShree",age:22},
-        {name:"Shashank",age:26},
-    ];
   return (
-    <div className='Table-container'>
-      
-<table className='student-table'>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-
-       
-        {
-            students.map((student,index)=>(  
-
-               <tr key={index}>
-                  <td>{student.name}</td>
-                  <td>{student.age}</td>
-                  <td><button className='action-btn edit'>Edit</button>
-                      <button className='action-btn delete'>Delete</button></td>
-               </tr> 
-            ))      }
-    </tbody>
-</table>
-
+  <>
+  <div>STUDENT TABLE</div>
+    <div className='table'>
+      <table>
+        <thead>
+            <tr>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Chandan</td>
+                <td>25</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Manya</td>
+                <td>20</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Sandeep</td>
+                <td>22</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Farooq</td>
+                <td>24</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Manish</td>
+                <td>23</td>
+                <td></td>
+            </tr>
+        </tbody>
+      </table>
     </div>
-  );
-};
+    <div><button>Edit</button></div>
+    </>
+  )
+}
 
 export default Table
-
-
-
-
-
- /* With .map()://
- - You don’t need to manually call a function for each student.
-- It loops through the array automatically and renders each row.
-- If you add more students later, the table updates without extra code.
-  showing .map() is a best practice in React. */
-
-//   - key is required when rendering lists so React can track elements efficiently.
-// - key={index} works fine for static lists (like your 5 students).
-// instead of using id we are using index to get it effeciently
-        
