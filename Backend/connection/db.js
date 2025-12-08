@@ -7,7 +7,7 @@ async function ConnectDB() {
     );
     console.log("Connected Mongodb");
   } catch (error) {
-    console.log("Error Connecting to Mongodb", error);
+    console.log("Error Connecting to Mongodbv", error);
   }
 }
 
