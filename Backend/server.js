@@ -34,7 +34,7 @@ app.post("/api/student",async(req,res)=>{
 
     try {
        const newStudent=req.body;
-       console.log()
+      
        const student=new Student(newStudent);
        await student.save();
        res.status(200).json({
