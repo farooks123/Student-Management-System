@@ -28,6 +28,60 @@ app.get("/api/students",async(req,res)=>{
         error:error,
        })
     }
+});
+
+app.put("/api/student/:id",async(req,res)=>{
+
+    try {
+        const studentId=req.params.id;
+        const updatedData=req.body;
+
+        const result=await Student.findByIdAndUpdate(studentId,updatedData,{new:true});
+
+        if(!result){
+            res.status(400).json({
+                success:false,
+                message:"Error updating student",
+            })
+        }
+        res.status(200).json({
+            success:true,
+            message:"Successfully Updated Student",
+            student:result,
+        })
+
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message:"Error Updating Student",
+            error:error.message,
+        })
+    }
+})
+
+app.delete("/api/student/:id",async(req,res)=>{
+
+    try {
+        const studentId=req.params.id;
+        const deletedStudent=await Student.findByIdAndDelete(studentId);
+        if(!deletedStudent){
+            res.status(400).json({
+                success:false,
+                message:"Student not found",
+            })
+        }
+        res.status(200).json({
+            success:true,
+            message:"Successfully deleted Student",
+            student:deletedStudent
+        })
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message:"Error deleting Student",
+            error:error.message
+        })
+    }
 })
 
 app.post("/api/student",async(req,res)=>{
