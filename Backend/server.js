@@ -1,6 +1,8 @@
 const express=require("express");
 const ConnectDB = require("./connection/db");
 const app=express()// calling the function
+const cors=require("cors");
+app.use(cors());
 const mongoose=require("mongoose");
 const Student=require("./model/Student")
 app.use(express.json());

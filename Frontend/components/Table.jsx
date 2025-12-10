@@ -1,7 +1,13 @@
-import React from 'react'
+import React,{ useEffect,} from 'react'
 import "../components/Table.css"
+import { getAllStudents } from '../src/services/api'
 
 const Table = () => {
+
+  useEffect(() => {
+    getAllStudents();
+  }, [])
+
   return (
   <>
   <div>STUDENT TABLE</div>
@@ -19,6 +25,7 @@ const Table = () => {
                 <td>Chandan</td>
                 <td>25</td>
                 <td><button>Edit</button></td>
+                 
             </tr>
             <tr>
                 <td>Manya</td>
