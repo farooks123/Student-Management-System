@@ -24,3 +24,15 @@ export const getAllStudents=async()=>{
         console.log("Error while calling getAllStudents ",error);
     }
 }
+
+    //POST require
+     export const addStudent=async({name,age})=>{
+        try {
+            const response=await API.post("/student",{name,age});
+            return response.data.message;
+        } catch (error) {
+    
+           console.log("Error while adding student",error);
+        }
+     }
+
