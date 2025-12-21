@@ -36,3 +36,29 @@ export const getAllStudents=async()=>{
         }
      }
 
+     export const getStudentById = async (id) => {
+  try {
+    const response = await API.get(`/student/${id}`);           
+      return response.data.student;
+    } catch (error) {       
+    console.log("Error while fetching student by ID", error);
+  }
+     }
+     export const updateStudent = async (id,name,age) => {
+  try {
+    const response = await API.put(`/student/${id}`, { name, age });
+    return response.data.message;
+  } catch (error) {
+    console.log("Error while updating student", error);
+  }
+};
+
+//    DELETE student by ID
+export const deleteStudent = async (id) => {
+  try {
+    const response = await API.delete(`/student/${id}`);
+    return response.data.message;
+  } catch (error) {
+    console.log("Error while deleting student", error);
+  }
+};

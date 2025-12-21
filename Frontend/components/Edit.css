@@ -1,0 +1,84 @@
+/* EditStudent.css */
+
+.edit-student-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 25px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.edit-student-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.edit-student-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edit-student-container label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+  color: #444;
+}
+
+.edit-student-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.edit-student-container input:focus {
+  border-color: #0078d7;
+  outline: none;
+}
+
+.edit-student-container .button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.edit-student-container button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.edit-student-container button[type="submit"] {
+  background-color: #0078d7;
+  color: white;
+}
+
+.edit-student-container button[type="submit"]:hover {
+  background-color: #005fa3;
+}
+
+.edit-student-container button[type="button"] {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.edit-student-container button[type="button"]:hover {
+  background-color: #c7c7c7;
+}
+
+.edit-student-container p {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
